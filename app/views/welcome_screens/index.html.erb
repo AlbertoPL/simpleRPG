@@ -1,0 +1,19 @@
+<p>Welcome to SimpleRPG!</p>
+<div class="controlPanel">
+	<% if current_user %>
+		<% if current_user.character %>
+			<p>Current health: <%= current_user.character.hp %></p>
+			<p>Gold: <%= current_user.character.gold %></p>
+			<p>Level: <%= current_user.character.level %></p>
+			<p>Exp: <%= current_user.character.exp %></p>
+			<%= button_to "Fight!", new_fight_screen_path, :method => :get, :class => "btn btn-primary" %>
+			<%= button_to "Heal", heal_screen_path, :method => :get, :class => "btn btn-primary" %>
+			<%= button_to "Shop", shop_screen_path, :method => :get, :class => "btn btn-primary" %>
+		<% else %>
+			<%= form_tag(characters_path) do %>
+				
+				<%= button_tag raw("<i class=\"icon-user icon-white\"></i> Create Character"), :class => "btn btn-primary" %>
+			<% end %>
+		<% end %>
+	<% end %>
+</div>

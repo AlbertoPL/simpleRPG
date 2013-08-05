@@ -1,0 +1,11 @@
+<div>Hospital!</div>
+<div>Your Health: <%=current_user.character.hp%></div>
+<div>Your Gold: <%=current_user.character.gold%></div>
+
+<div>Each point of health costs 1 gold to restore</div>
+
+<%= button_to "Heal 1 HP", heal_screen_path(:healval => 1), :method => :put, :class => "btn btn-success" %>
+<%= button_to "Heal 5 HP", heal_screen_path(:healval => 5), :method => :put, :class => "btn btn-success" %>
+<%= button_to "Heal 10 HP", heal_screen_path(:healval => 10), :method => :put, :class => "btn btn-success" %>
+<%= button_to "Heal All", heal_screen_path(:healval => current_user.character.maxhp), :method => :put, :class => "btn btn-success" %>
+<%= button_to "Exit", root_url, :class => "btn btn-primary" %> 

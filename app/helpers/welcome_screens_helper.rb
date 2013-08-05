@@ -1,0 +1,2 @@
+module WelcomeScreensHelper
+end

@@ -1,0 +1,10 @@
+<div>Shop!</div>
+<div>Your Max Health: <%=current_user.character.maxhp%></div>
+<div>Your base min damage: <%=current_user.character.mindamage%></div>
+<div>Your base max damage: <%=current_user.character.maxdamage%></div>
+<div>Your Gold: <%=current_user.character.gold%></div>
+
+<%= button_to "Add 5 to max health - 15 gold", shop_screen_path(:addmaxhp => 5), :method => :put %>
+<%= button_to "Add 1 to min damage - 15 gold", shop_screen_path(:addmindamage => 1), :method => :put %>
+<%= button_to "Add 1 to max damage - 10 gold", shop_screen_path(:addmaxdamage => 1), :method => :put %>
+<%= button_to "Exit", root_url %> 

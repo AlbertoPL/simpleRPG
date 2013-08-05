@@ -1,0 +1,7 @@
+
+<div>Your Health: <%=current_user.character.hp-%></div>
+<div>Enemy Health: <%=@enemy.hp-%></div >
+
+<%= button_to "Punch", fight_screen_path(@enemy.id, :move => "Punch"), :method => :put, :class => "btn btn-primary" %>
+<%= button_to "Kick", fight_screen_path(@enemy.id, :move => "Kick"), :method => :put, :class => "btn btn-primary" %>
+<%= button_to "Chop", fight_screen_path(@enemy.id, :move => "Chop"), :method => :put, :class => "btn btn-primary" %>
